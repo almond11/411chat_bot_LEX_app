@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 no-js" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 no-js" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+<?php include "view/htm2/header.html";?>  
+
+   <div class="ht-page-header" style="background-image: url('view/htm2/images/parallax/2.jpg')">
+    <div class="overlay" style="background: rgba(0,0,0,.5)"></div>
+  
+
+
+
+    <div class="container">
+     <div class="inner">
+      <h2 class="heading">Welcome to Intelligent Kitchen</h2>
+      <ol class="ht-breadcrumb">
+       <li><a href="#">Healthy</a></li>
+       <li><a href="#">Delicious</a></li>
+       <li><a href="#">Fresh</a></li>
+      </ol>
+      <ol class="ht-breadcrumb">
+       <li><a href="#">By Team Terabyte</a></li>
+      </ol>
+     </div>
+     <!-- / .inner -->
+    </div>
+    <!-- / .container -->
+   </div>
+   <!-- /.ht-section -->
+   <section class="ht-section hs-recipes grid">
+    <header class="hs-header">
+     <div class="container">
+      <h2 class="heading">Recipes</h2>
+     </div>
+     <ul class="isotope-filter" data-target="#grid-2">
+      <li class="is-filtered"><a href="#" data-filter="*">ALL</a></li>
+      <li><a href="#" data-filter=".filter-food">FOODS</a></li>
+      <li><a href="#" data-filter=".filter-beverages">BEVERAGES</a></li>
+      <li><a href="#" data-filter=".filter-dessert">DESSERTS</a></li>
+      <li><a href="#" data-filter=".filter-pudding">PUDDING</a></li>
+     </ul>
+    </header>
+    <div class="hs-content">
+     <div class="container">
+      <div class="row">
+       <div class="isotope-grid" id="grid-2">
+       	
+       	<?php $count=0;foreach($recipelist as $recipe) {$count++; 
+       		if($count%3 == 0)  $filter = "filter-food filter-pudding"; 
+       		else if($count%3 == 1)  $filter = "filter-pudding filter-beverages"; 
+       		else if($count%3 == 2)   $filter = "filter-beverages filter-dessert";
+       		?>       	
+        <div class="entry col-xs-12 col-sm-4 col-md-3 <?php echo $filter;?>">
+         <div class="entry-inner">
+          <div class="entry-media">
+           <img src="view/htm2/images/dishes/dish_<?php echo rand(1,50); ?>.jpg" alt="" />
+           <div class="entry-action">
+            <div class="entry-action-inner">
+             <span><a href="?recipe-<?php echo $recipe['recipeid']; ?>">VIEW RECIPE</a></span>
+             <span><a href="#">BOOKMARK RECIPE</a></span>
+            </div>
+           </div>
+          </div>
+          <!-- ./ entry-media -->
+          <div class="content-wrapper">
+           <h4 class="entry-name" style=" white-space:nowrap;text-overflow:ellipsis;overflow:hidden;"><a href="?recipe-<?php echo $recipe['recipeid']; ?>"><?php echo $recipe['title']?></a></h4>
+           <p class="entry-author">calories: <?php echo $recipe['calories']?></p>
+           <div class="entry-meta">
+            <div class="foo-wrapper">
+             <span class="meta-difficulty easy" title="level">level <?php echo rand(1,10);?></span>
+             <span class="meta-time"><?php echo rand(10,60);?> minutes</span>
+            </div><?php $rating = round($recipe['rating'])?>
+            <div class="meta-rate" title="<?php echo $rating?> star">
+            	  <?php for($i=0;$i<$rating;$i++){?>
+            		<i class="fa fa-star rated"></i>
+            		<?php }?>
+            	  <?php for($i=$rating;$i<5;$i++){?>
+            		<i class="fa fa-star"></i>
+            		<?php }?>
+            </div>
+           </div>
+          </div>
+          <!-- ./ entry-content -->
+         </div>
+         <!-- /.entry-inner -->
+        </div>
+        <?php }?>
+
+        <!-- /.entry -->
+       </div>
+       <!-- / .isotope-entry -->
+      </div>
+      <!-- /.row -->
+      <p class="text-center"><a href="view/htm2/recipe_index.html" class="ht-button view-more-button"><i class="fa fa-arrow-left"></i>VIEW MORE RECIPES <i class="fa fa-arrow-right"></i></a></p>
+     </div>
+     <!-- /.container -->
+    </div>
+    <!-- /.ht-products.grid -->
+   </section>
+   <!-- /.ht-section -->
+
+   <!-- /.ht-section -->
+   <section class="ht-section hs-recent-posts grid">
+    <header class="hs-header">
+     <div class="container">
+      <h2 class="heading">RECENT BLOG POSTS</h2>
+     </div>
+    </header>
+    <div class="hs-content">
+     <div class="container">
+      <div class="row">
+       <div class="entry col-xs-12 col-sm-4">
+        <div class="entry-media">
+         <img src="view/htm2/images/dishes/dish_1.jpg" alt="" />
+        </div>
+        <h3 class="entry-title"><a href="post_single.html">Suspendisse Vulputate Ligula Turpis Fermentum Sollicitudin</a></h3>
+        <p class="entry-meta"><img src="view/htm2/images/author/1.jpg" alt="" /> Post by Robert Lewandoski</p>
+        <p class="entry-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        <p><a class="ht-button view-more" href="#">View more <i class="fa fa-long-arrow-right"></i></a></p>
+       </div>
+       <div class="entry col-xs-12 col-sm-4">
+        <div class="entry-media">
+         <img src="view/htm2/images/dishes/dish_2.jpg" alt="" />
+        </div>
+        <h3 class="entry-title"><a href="post_single.html">Suspendisse Vulputate Ligula Turpis Fermentum Sollicitudin</a></h3>
+        <p class="entry-meta"><img src="view/htm2/images/author/2.jpg" alt="" /> Post by Robert Lewandoski</p>
+        <p class="entry-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        <p><a class="ht-button view-more" href="#">View more <i class="fa fa-long-arrow-right"></i></a></p>
+       </div>
+       <div class="entry col-xs-12 col-sm-4">
+        <div class="entry-media">
+         <img src="view/htm2/images/dishes/dish_3.jpg" alt="" />
+        </div>
+        <h3 class="entry-title"><a href="post_single.html">Suspendisse Vulputate Ligula Turpis Fermentum Sollicitudin</a></h3>
+        <p class="entry-meta"><img src="view/htm2/images/author/3.jpg" alt="" /> Post by Robert Lewandoski</p>
+        <p class="entry-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        <p><a class="ht-button view-more" href="#">View more <i class="fa fa-long-arrow-right"></i></a></p>
+       </div>
+      </div>
+     </div>
+     <!-- /.container -->
+    </div>
+    <!-- /.hs-content -->
+   </section>
+   <!-- / .hs-recent-posts -->
+   <section class="ht-section hs-parallax hs-gallery" style="background-image: url('view/htm2/images/parallax/1.jpg')">
+    <div class="overlay" style="background-color: rgba(0,0,0,.7);"></div>
+    <header class="hs-header">
+     <div class="container">
+      <h2 class="heading">OUR GALLERY FROM INSTAGRAM</h2>
+     </div>
+    </header>
+    <div class="hs-content">
+     <div class="ht-masonry-layout ht-lightbox-gallery container" data-grid-size="20%" data-child="a">
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/1.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/1.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/2.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/2.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 40%">
+       <a href="view/htm2/images/gallery/4.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/4.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/3.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/3.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/5.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/5.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/6.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/6.jpg" alt="" />
+      </div>
+      <div class="entry" style="width: 20%">
+       <a href="view/htm2/images/gallery/7.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a>
+       <img src="view/htm2/images/gallery/7.jpg" alt="" />
+      </div>
+      <!-- <div class="entry" style="width: 60%"><a href="view/htm2/images/gallery/8.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/8.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/9.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/9.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/10.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/10.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/1.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/1.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/2.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/2.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/3.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/3.jpg" alt=""></div><div class="entry" style="width: 20%"><a href="view/htm2/images/gallery/4.jpg" class="overlay" title="Lorem ipsum dolor sit ames"><i class="fa fa-arrows-alt"></i></a><img src="view/htm2/images/gallery/4.jpg" alt=""></div>-->
+     </div>
+     <!-- /.container -->
+    </div>
+    <!-- /.hs-content -->
+    <div style="height: 100px;"></div>
+   </section>
+   <!-- /.ht-section -->
+   <section class="ht-section hs-editors grid">
+    <header class="hs-header">
+     <div class="container">
+      <h2 class="heading">NUTRITIONIST EDITORS</h2>
+      <p class="sub-heading">Here they are, the people behind the succeess of NUTRITIONIST.</p>
+     </div>
+    </header>
+    <div class="hs-content">
+     <div class="container">
+      <div class="row">
+       <div class="entry col-xs-12 col-sm-3">
+        <div class="entry-media">
+         <div class="thumb">
+          <img src="view/htm2/images/author/1.jpg" alt="" />
+         </div>
+        </div>
+        <h3 class="entry-name">JOHN DOE</h3>
+        <p class="entry-position">Executive Editor</p>
+        <div class="entry-social">
+         <div class="entry-social-inner">
+          <a href="" class="fa fa-facebook"></a>
+          <a href="" class="fa fa-twitter"></a>
+          <a href="" class="fa fa-youtube"></a>
+         </div>
+        </div>
+       </div>
+       <!-- /.entry -->
+       <div class="entry col-xs-12 col-sm-3">
+        <div class="entry-media">
+         <div class="thumb">
+          <img src="view/htm2/images/author/2.jpg" alt="" />
+         </div>
+        </div>
+        <h3 class="entry-name">JOHN DOE</h3>
+        <p class="entry-position">Executive Editor</p>
+        <div class="entry-social">
+         <div class="entry-social-inner">
+          <a href="" class="fa fa-facebook"></a>
+          <a href="" class="fa fa-twitter"></a>
+          <a href="" class="fa fa-youtube"></a>
+         </div>
+        </div>
+       </div>
+       <!-- /.entry -->
+       <div class="entry col-xs-12 col-sm-3">
+        <div class="entry-media">
+         <div class="thumb">
+          <img src="view/htm2/images/author/3.jpg" alt="" />
+         </div>
+        </div>
+        <h3 class="entry-name">JOHN DOE</h3>
+        <p class="entry-position">Executive Editor</p>
+        <div class="entry-social">
+         <div class="entry-social-inner">
+          <a href="" class="fa fa-facebook"></a>
+          <a href="" class="fa fa-twitter"></a>
+          <a href="" class="fa fa-youtube"></a>
+         </div>
+        </div>
+       </div>
+       <!-- /.entry -->
+       <div class="entry col-xs-12 col-sm-3">
+        <div class="entry-media">
+         <div class="thumb">
+          <img src="view/htm2/images/author/3.jpg" alt="" />
+         </div>
+        </div>
+        <h3 class="entry-name">JOHN DOE</h3>
+        <p class="entry-position">Executive Editor</p>
+        <div class="entry-social">
+         <div class="entry-social-inner">
+          <a href="" class="fa fa-facebook"></a>
+          <a href="" class="fa fa-twitter"></a>
+          <a href="" class="fa fa-youtube"></a>
+         </div>
+        </div>
+       </div>
+       <!-- /.entry -->
+      </div>
+      <p class="text-center"><a href="editors_grid.html" class="ht-button view-more-button"><i class="fa fa-arrow-left"></i>VIEW ALL EDITORS <i class="fa fa-arrow-right"></i></a></p>
+     </div>
+     <!-- /.container -->
+    </div>
+    <!-- /.hs-content -->
+   </section>
+   <!-- / .hs-recent-posts -->
+   <section class="ht-section hs-footer-widget">
+    <h2 class="sr-only">Realty footer</h2>
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-popular-recipes">
+        <h3 class="widget-title">POPULAR RECIPES</h3>
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/1.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Khatulistiwa Fruit Salad</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/2.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Home Made Italian Pizza</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/3.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Original Kupat Sayur</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/4.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Fried Sumedang Tofu</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+       </div>
+       <!-- / .ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-popular-categories">
+        <h3 class="widget-title">POPULAR CATEGORIES</h3>
+        <ul>
+         <li><a href="#">Foods</a></li>
+         <li><a href="#">Desserts</a></li>
+         <li><a href="#">Beverages</a></li>
+         <li><a href="#">Appelizes</a></li>
+         <li><a href="#">Pudding</a></li>
+         <li><a href="#">Iced Cream</a></li>
+        </ul>
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-posts">
+        <h3 class="widget-title">POPULAR POST FROM BLOG</h3>
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-about">
+        <h3 class="widget-title">ABOUT NUTRITIONIST TEMPLATE</h3>
+        <p>Nunc vel lorem ligula, vitae vestibulum arcu. Suspendisse non purus mauris. Suspendisse vulputate ligula sed turpis fermentum sollicitudin. Quisque orci lorem, porta nec rutrum sit amet, auctor sodales sapien.</p>
+       </div>
+       <!-- /. ht-widget -->
+       <div class="ht-widget hw-subscribe">
+        <h3 class="widget-title">SUBSCRIBE TO OUR NEWSLETTER</h3>
+        <p class="caption">Always up to date about our new recipe</p>
+        <form action="#">
+         <input type="text" placeholder="Email" />
+         <button type="submit">GO</button>
+        </form>
+        <p class="social"><a href="#" class="fa fa-facebook" title=""></a><a href="#" class="fa fa-twitter" title=""></a><a href="#" class="fa fa-youtube" title=""></a><a href="#" class="fa fa-rss" title=""></a></p>
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+     </div>
+    </div>
+   </section>
+   <footer id="ht-footer">
+    <div class="container">
+     <p class="copyright">COPYRIGHT &copy; 2014 NUTRITIONIST. POWERED BY WORDPRESS AND THEMEPE</p>
+     <ul class="footer-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="event_list.html">EVENT</a></li>
+      <li><a href="recipe_index.html">ALL RECIPES</a></li>
+      <li><a href="post_masonry.html">BLOG</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="register_login.html">LOGIN</a></li>
+     </ul>
+    </div>
+   </footer>
+   <!-- Modal -->
+   <div class="modal fade" id="ht-search-form" tabindex="-1" role="dialog" aria-labelledby="ht-search-form" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-body">
+       <form action="#">
+        <input type="text" placeholder="Type keyword ..." autofocus="" />
+        <button class="search-button" type="button"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- / .hs-footer-widget -->
+  </div>
+  <!-- ./ht-page-wrapper -->
+  <script src="view/htm2/js/plugins.js"></script>
+  <script src="view/htm2/js/custom.js"></script>
+ </body>
+</html>

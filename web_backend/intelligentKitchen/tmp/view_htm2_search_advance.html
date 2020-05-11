@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 no-js" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 no-js" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+<?php include "view/htm2/header.html";?> 
+   <!-- END | Header -->
+   <div class="ht-page-header" style="background-image: url('view/htm2/images/parallax/2.jpg')">
+    <div class="overlay" style="background: rgba(0,0,0,.5)"></div>
+    <div class="container">
+     <div class="inner">
+      <h2 class="heading">Intelligent Kitchen</h2>
+      <ol class="ht-breadcrumb">
+       <li><a href="#">Healthy</a></li>
+       <li>Delicious</li>
+       <li>Fresh</li>
+      </ol>
+     </div>
+     <!-- / .inner -->
+    </div>
+    <!-- / .container -->
+   </div>
+   <!-- / .ht-page-header -->
+   <section class="ht-section">
+    <h2 class="sr-only">Search Advanced</h2>
+    <div class="container">
+     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <form action="?searchadv.htm" id="form1" class="advance-search-form">
+
+       <div class="form-group col-xs-12">
+        <label>By Keyword </label>
+        <input type="text" name="keyword" id="keyword" value="<?php echo $keyword_decode;?>"/>
+       </div>
+       
+       <!--<div class="form-group col-xs-12">-->
+       <!-- <label>Select one or more ingredients that should be included in recipe (optional)</label>-->
+       <!-- <input type="text" name="ingredients"/>-->
+       <!--</div>-->
+       <!--<div class="form-group col-xs-12">-->
+       <!-- <label>Select one or more ingredients that should be excluded in recipe</label>-->
+       <!-- <input type="text" name="notingredients" />-->
+       <!--</div>-->
+       
+       <div class="form-group inline col-xs-12">
+        <label>Choose Category</label>
+        <select name="category" id = "category"><option value="">Select</option>
+            <?php foreach($ingredientList as $ingred){?>  
+           		<option  value="<?php echo $ingred['food_group'];?>" ><?php echo ucfirst($ingred['food_group']);?></option>
+            <?php }?> 
+        <!--<option value="">Category 1</option><option value="">Category 2</option>-->
+        </select>
+       </div>
+       <div class="form-group inline col-xs-12">
+        <label>Choose Calories</label>
+        <select name="calories" id = "calories"><option value="">Select</option>
+            <option value="0,250">0 - 250</option>
+            <option value="250,500">250 - 500</option>
+            <option value="500,1000">500 - 1000</option>
+            <option value="1000,2000">1000 - 2000</option>
+            <option value="2000,10000"> > 2000</option>
+        </select>
+       </div>
+       <!--<div class="form-group inline col-xs-12">-->
+       <!-- <label>Choose time needed</label>-->
+       <!-- <select><option value="" selected="" disabled="">Select</option><option value="">Under 5 mins</option><option value="">5 - 10 mins</option></select>-->
+       <!--</div>-->
+       <div class="form-group col-xs-12">
+        <button type="submit"  id="submit" class="ht-button view-more-button"><i class="fa fa-arrow-left"></i>SUBMIT <i class="fa fa-arrow-right"></i></button>
+       </div>
+      </form>
+     </div>
+    </div>
+   </section>
+   <section class="ht-section hs-footer-widget">
+    <h2 class="sr-only">Realty footer</h2>
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-popular-recipes">
+        <h3 class="widget-title">POPULAR RECIPES</h3>
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/1.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Khatulistiwa Fruit Salad</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/2.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Home Made Italian Pizza</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/3.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Original Kupat Sayur</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+        <article class="post">
+         <a href="post_single.html">
+          <div class="media">
+           <img src="view/htm2/images/thumb/4.jpg" alt="" />
+          </div>
+          <div class="content">
+           <h4>Fried Sumedang Tofu</h4>
+           <div class="meta-rate" title="4 star">
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star rated"></i>
+            <i class="fa fa-star"></i>
+           </div>
+          </div></a>
+        </article>
+        <!-- /.post -->
+       </div>
+       <!-- / .ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-popular-categories">
+        <h3 class="widget-title">POPULAR CATEGORIES</h3>
+        <ul>
+         <li><a href="#">Foods</a></li>
+         <li><a href="#">Desserts</a></li>
+         <li><a href="#">Beverages</a></li>
+         <li><a href="#">Appelizes</a></li>
+         <li><a href="#">Pudding</a></li>
+         <li><a href="#">Iced Cream</a></li>
+        </ul>
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-posts">
+        <h3 class="widget-title">POPULAR POST FROM BLOG</h3>
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+        <article class="post">
+         <h4><a href="post_single.html">Suspendisse Non Purus Mauris. Suspendisse Vulputate Ligula Sed Turpis.</a></h4>
+         <div class="meta">
+          <span>146 VIEWS</span>
+          <span>23 COMMENTS</span>
+         </div>
+        </article>
+        <!-- / .post -->
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+      <div class="col-xs-12 col-sm-3">
+       <div class="ht-widget hw-about">
+        <h3 class="widget-title">ABOUT NUTRITIONIST TEMPLATE</h3>
+        <p>Nunc vel lorem ligula, vitae vestibulum arcu. Suspendisse non purus mauris. Suspendisse vulputate ligula sed turpis fermentum sollicitudin. Quisque orci lorem, porta nec rutrum sit amet, auctor sodales sapien.</p>
+       </div>
+       <!-- /. ht-widget -->
+       <div class="ht-widget hw-subscribe">
+        <h3 class="widget-title">SUBSCRIBE TO OUR NEWSLETTER</h3>
+        <p class="caption">Always up to date about our new recipe</p>
+        <form action="#">
+         <input type="text" placeholder="Email" />
+         <button type="submit">GO</button>
+        </form>
+        <p class="social"><a href="#" class="fa fa-facebook" title=""></a><a href="#" class="fa fa-twitter" title=""></a><a href="#" class="fa fa-youtube" title=""></a><a href="#" class="fa fa-rss" title=""></a></p>
+       </div>
+       <!-- /. ht-widget -->
+      </div>
+      <!-- /. widget colums -->
+     </div>
+    </div>
+   </section>
+   <footer id="ht-footer">
+    <div class="container">
+     <p class="copyright">COPYRIGHT &copy; 2014 NUTRITIONIST. POWERED BY WORDPRESS AND THEMEPE</p>
+     <ul class="footer-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="event_list.html">EVENT</a></li>
+      <li><a href="recipe_index.html">ALL RECIPES</a></li>
+      <li><a href="post_masonry.html">BLOG</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="register_login.html">LOGIN</a></li>
+     </ul>
+    </div>
+   </footer>
+   <!-- Modal -->
+   <div class="modal fade" id="ht-search-form" tabindex="-1" role="dialog" aria-labelledby="ht-search-form" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-body">
+       <form action="#">
+        <input type="text" placeholder="Type keyword ..." autofocus="" />
+        <button class="search-button" type="button"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- / .hs-footer-widget -->
+  </div>
+  <!-- ./ht-page-wrapper -->
+  <script src="view/htm2/js/plugins.js"></script>
+  <script src="view/htm2/js/custom.js"></script>
+  <script>
+    var jform = $('#form1');
+    var jsubmit = $('#submit');
+    jform.on('submit', function() {
+    	var keyword = $('#keyword').val();
+    	var category = $('#category').val();
+    	var calories = $('#calories').val();
+    	//console.log(encodeURI(keyword));
+    // 	window.location = '?searchadv-' + encodeURI(keyword);
+        window.location = '?searchadv-' + encodeURI(keyword)+'-'+encodeURI(category)+'-'+encodeURI(calories);
+    	return false;
+    });
+
+</script>
+  
+ </body>
+</html>
